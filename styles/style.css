@@ -1,0 +1,202 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	color: #dddddd;
+}
+
+html,
+body {
+	overflow-x: hidden;
+	position: relative;
+	font-family: Arial, sans-serif;
+	background-color: #f0f2f5;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
+}
+
+#blur {
+	overflow: hidden;
+	z-index: 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	backdrop-filter: blur(10px);
+}
+
+#background {
+	overflow: hidden;
+	z-index: 0;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('https://staticg.sportskeeda.com/editor/2024/08/405b0-17236355292851-1920.jpg');
+	background-size: cover;
+	transform: scale(1.5) translate(-50%, -50%);
+	transform-origin: center;
+}
+
+#inside {
+	z-index: 1;
+	display: flex;
+	width: 100%;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+	padding: 60px 0px;
+}
+
+#container,
+#credits {
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(40px);
+}
+
+#container {
+	border-radius: 8px;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	max-width: 600px;
+}
+
+h1,
+h2 {
+	text-align: center;
+}
+
+h2,
+#slogan {
+	margin-bottom: 20px;
+}
+
+#slogan,
+#tip {
+	text-align: center;
+	width: 100%;
+	font-size: 0.6rem;
+}
+
+#tip {
+	font-size: 0.8rem;
+	padding-top: 20px;
+}
+
+.unknown-row {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+.unknown-row:nth-child(even):not(.unknown-row:first-child):not(
+		.unknown-row:last-child
+	) {
+	border-bottom: 0;
+}
+
+.unknown-row:nth-child(odd):not(.unknown-row:first-child):not(
+		.unknown-row:last-child
+	) {
+	border-bottom: 0;
+}
+
+.unknown-row:first-child {
+	border-top: 1;
+	border-bottom: 0;
+}
+
+.unknown-row:last-child {
+	border-bottom: 1;
+}
+
+.unknown-name {
+	text-align: center;
+	width: 50px;
+	font-weight: bold;
+	font-size: 1.1em;
+	margin-right: 15px;
+	text-transform: uppercase;
+}
+
+.value-options {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.value-box {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: transform 0.2s ease, border-color 0.3s;
+}
+
+.value-box:hover {
+	transform: scale(1.05);
+}
+
+.value-box img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.value-box.selected {
+	border-color: #f44336;
+	box-shadow: 0px 0px 10px 2px rgba(244, 67, 54, 0.5);
+	background-color: #f44336;
+}
+
+.value-box img {
+	padding: 5px;
+	filter: invert(1);
+}
+
+.value-box.selected img {
+	filter: invert(0);
+}
+
+#results {
+	margin-top: 10px;
+}
+
+#results-container {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 10px;
+}
+
+.result-block {
+	padding: 5px 15px;
+	border-radius: 4px;
+	background-color: #555;
+	border: 1px solid #555;
+	min-width: 60px;
+	text-align: center;
+	font-size: 2em;
+	color: #fff;
+	font-weight: bolder;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#credits {
+	z-index: 1;
+	height: 30px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.8rem;
+	text-align: center;
+}
